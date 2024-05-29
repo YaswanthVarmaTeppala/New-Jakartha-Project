@@ -1,0 +1,66 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Employee</title>
+<style>
+	td{
+	font-size:20px;
+	}
+	input{
+	font-size:20px;
+	}
+	th,tr,td{
+	border:1px solid black;
+	}
+	thead{
+	background-color:silver;
+	}
+	#submit{
+	border:none;
+	}
+	select{
+	font-size:25px;
+	}
+</style>
+</head>
+<body>
+		<h2>Enter Employee Details :-</h2>
+		
+		<form class="form" action="http://localhost:8081/SampleDBproject/Employee1" method="post">
+			<table>
+				<thead>
+					<tr>
+					<th>Employee Id</th>
+					<th>Employee Name</th>
+					<th>Employee Department</th>
+					<th>Employee Designation</th>
+					</tr>
+				</thead>
+				<tbody>
+				<tr>
+				<td><input type="number" name="employeeId" required></td>
+				<td>
+				<label for="employees"></label>
+					<Select id="employees" name="employeeName">
+						<option value=""></option>
+						<option value="Sanju">Sanju</option>
+						<option value="Rahul">Rahul</option>
+						<option value="Kowshick">Kowshick</option>
+						<option value="Prasanth">Prasanth</option>
+						<option value="Suresh">Suresh</option>
+						<option value="Kumar">Kumar</option>
+					</Select>
+				</td>
+				<td><input type="text" name="employeeDept" required></td>
+				<td><input type="text" name="employeeDesignation" required></td>
+				</tr>
+				<tr id="submit">
+					<td id="submit"><input type="submit" value="Submit Data" ></td>
+					<td id="submit"><input type="reset" value="reset"></td>
+				</tr>
+			</table>
+		</form>
+</body>
+</html>

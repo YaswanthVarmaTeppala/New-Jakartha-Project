@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="ISO-8859-1">
+    <title>Insert title here</title>
+    <style>
+        body {
+            height: 100vh;
+        }
+        table {
+            /* Add styling if needed */
+        }
+        td {
+            font-size: 20px;
+        }
+        input {
+            font-size: 20px;
+        }
+        th, tr, td {
+            border: 1px solid black;
+        }
+        thead {
+            background-color: pink;
+        }
+        #submit {
+            border: none;
+        }
+        select {
+            font-size: 20px;
+        }
+        .form {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <h2>Enter Project Details :-</h2>
+    <form class="form" action="CreateProject" method="post">
+        <table>
+            <thead>
+                <tr>
+                    <th>Project Code</th>
+                    <th>Project Title</th>
+                    <th>Project Description</th>
+                    <th>Customer Id</th>
+                    <th>Location</th>
+                    <th>Project Value</th>
+                    <th>Currency</th>
+                    <th>Start Date</th>
+                    <th>End Date</th>
+                    <th>Project Manager</th>
+                    <th>Total Delivery Milestones</th>
+                    <th>Total Invoice Milestones</th>
+                    <th>Current Status</th>
+                    <th>Deviations in Time Limit</th>
+                    <th>Deviations in Efforts</th>
+                    <th>Total Man Days</th>
+                    <th>Alloted Man Days</th>
+                    <th>Total Consumed</th>
+                    <th>Customer Name</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><input type="text" name="projectCode" required></td>
+                    <td><input type="text" name="projectTitle" required></td>
+                    <td><textarea name="projectDescription" required></textarea></td>
+                    <td>
+                        <label for="customers"></label>
+                        <select id="customers" name="customerId">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
+                        </select>
+                    </td>
+                    <td><input type="text" name="location" required></td>
+                    <td><input type="text" name="projectValue" required></td>
+                    <td><input type="text" name="currency" required></td>
+                    <td><input type="date" name="startDate" required></td>
+                    <td><input type="date" name="endDate" required></td>
+                    <td><input type="text" name="projectManager" required></td>
+                    <td><input type="number" name="totalDeliveryMilestones" required></td>
+                    <td><input type="number" name="totalInvoiceMilestones" required></td>
+                    <td><input type="text" name="currentStatus" required></td>
+                    <td><input type="number" name="deviationsInTimeLimit" required></td>
+                    <td><input type="number" name="deviationsInEfforts" required></td>
+                    <td><input type="number" name="totalManDays" required></td>
+                    <td><input type="number" name="allottedManDays" required></td>
+                    <td><input type="number" name="totalConsumed" required></td>
+                    <td>
+                        <label for="customers"></label>
+                        <select id="customers" name="customerName">
+                            <option value="Alwyn Electronics">Alwyn Electronics</option>
+                            <option value="BMX Consultancy services">BMX Consultancy services</option>
+                            <option value="Accent systems">Accent systems</option>
+                        </select>
+                    </td>
+                </tr>
+            </tbody>
+            <tr id="submit">
+                <td id="submit"><input type="submit" value="Submit Data" class="btn btn-outline-success"></td>
+                <td id="submit"><input type="reset" value="reset" class="btn btn-outline-danger"></td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>

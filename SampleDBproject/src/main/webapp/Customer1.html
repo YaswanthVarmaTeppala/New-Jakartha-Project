@@ -1,0 +1,80 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<style>
+	td{
+	font-size:20px;
+	}
+	input{
+	font-size:20px;
+	}
+	th,tr,td{
+	border:1px solid black;
+	}
+	thead{
+	background-color:skyblue;
+	}
+	#submit{
+	border:none;
+	}
+	select{
+	font-size:20px;
+	}
+</style>
+</head>
+<body>
+		<h2>Enter Customer Details :-</h2>
+		
+		<form class="form" action="http://localhost:8081/SampleDBproject/Customer" method="post">
+			<table>
+				<thead>
+					<tr>
+					<th>Customer Id</th>
+					<th>Customer Code</th>
+					<th>Customer Name</th>
+					<th>Location</th>
+					<th>Address Line1</th>
+					<th>Address Line2</th>
+					<th>Address Line3</th>
+					<th>City </th>
+					<th>TaxId</th>
+					<th>Bank Code</th>
+					<th>Account Number</th>
+					<th>Currency</th>
+					</tr>
+				</thead>
+				<tbody>
+				<tr>
+				<td><input type="number" name="customerId" required></td>
+				<td><input type="text" name="customerCode" required></td>
+				<td>
+				<label for="customers" required></label>
+					<Select id="customers" name="customerName">
+						<option value="Alwyn Electronics">Alwyn Electronics</option>
+						<option value="BMX Consultancy services">BMX Consultancy services</option>
+						<option value="Accent systems">Accent systems</option>
+					</Select>
+				</td>
+				<td><input type="text" name="location" required></td>
+				<td><textarea type="text" name="addressLine1" required></textarea></td>
+				<td><textarea type="text" name="addressLine2" required></textarea></td>
+				<td><textarea type="text" name="addressLine3" required></textarea></td>
+				<td><input type="text" name="city" required></td>
+				<td><input type="text" name="taxId" required></td>
+				<td><input type="text" name="bankCode" required></td>
+				<td><input type="text" name="accountNumber" required></td>
+				<td><input type="text" name="currency" required></td>
+				</tr>
+				<tr id="submit">
+					<td id="submit"><input type="submit" value="Submit Data" 
+					class="btn btn-outline-success"></td>
+					<td id="submit"><input type="reset" value="reset"
+					class="btn btn-outline-danger"></td>
+				</tr>
+			</table>
+		</form>
+</body>
+</html>

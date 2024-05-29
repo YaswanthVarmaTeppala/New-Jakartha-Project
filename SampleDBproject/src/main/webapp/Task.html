@@ -1,0 +1,237 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Project Task</title>
+<style>
+	td{
+	font-size:20px;
+	}
+	input{
+	font-size:20px;
+	}
+	th,tr,td{
+	border:1px solid black;
+	}
+	thead{
+	background-color:khaki;
+	}
+	#submit{
+	border:none;
+	}
+	select{
+	font-size:20px;
+	}
+	#projectCode,#taskCode,#signOff,#invoice{
+	width:150px;
+	}
+	select{
+	width:150px; 
+	}
+</style>
+</head>
+<body>
+		<h2>Enter Task Details :-</h2>
+		
+		<form class="form" action="Task" method="post">
+			<table>
+				<thead>
+					<tr>
+					<th>Project Code</th>
+					<th>Task Sr.No</th>
+					<th>Task Code</th>
+					<th>Task Name</th>
+					<th>Dependable Task Code</th>
+					<th>Simultaneous Tasks</th>
+					<th>Planned Start Date</th>
+					<th>Planned End Date</th>
+					<th>Actual Start Date</th>
+					<th>Actual End Date</th>
+					<th>Sign off(Y/N)</th>
+					<th>Invoice(Y/N)</th>
+					<th>Allocated Days</th>
+					<th>Actual Days</th>
+					<th>Description</th>
+					</tr>
+				</thead>
+				<tbody id="tableBody">
+				<tr>
+				<td>
+				<label for="projectCode"></label>
+					<Select id="projectCode" name="projectCode">
+						<option value=""></option>
+						<option value="01">01</option>
+						<option value="02">02</option>
+						<option value="03">03</option>
+						<option value="04">04</option>
+						<option value="05">05</option>
+						<option value="06">06</option>
+					</Select>
+				</td>
+				<td><input type="number" name="srNo" required></td>
+				<td>
+				<label for="taskCode"></label>
+					<Select id="taskCode" name="taskCode">
+						<option value=""></option>
+						<option value="1">1</option>
+						<option value="2">2</option>
+						<option value="3">3</option>
+						<option value="4">4</option>
+						<option value="5">5</option>
+						<option value="6">6</option>
+						<option value="7">7</option>
+					</Select>
+				</td>
+				<td><input type="text" name="taskName" required></td>
+				<td><input type="text" name="dependableTaskCode" required></td>
+				<td><input type="text" name="simultaneousTasks" required></td>
+				<td><input type="date" name="plannedtoStartDate" required></td>
+				<td><input type="date" name="plannedtoEndDate" required></td>
+				<td><input type="date" name="actualStartDate" required></td>
+				<td><input type="date" name="actualEndDate" required></td>
+				<td>
+				<label for="signOff"></label>
+					<Select id="signOff" name="signOff">
+						<option value=""></option>
+						<option value="YES">YES</option>
+						<option value="NO">NO</option>
+					</Select>
+				</td>
+				<td>
+				<label for="invoice"></label>
+					<Select id="invoice" name="invoice">
+						<option value=""></option>
+						<option value="YES">YES</option>
+						<option value="NO">NO</option>
+					</Select>
+				</td>
+				<td><input type="number" name="allocatedDays" required></td>
+				<td><input type="number" name="actualDays" required></td>
+				<td><textarea type="text" name="taskDescription" required></textarea></td>
+				</tr>
+				</tbody>
+			</table>
+			<button type="button" onclick="addRow()">Add Row</button>
+			<input type="submit" value="Submit Data">
+			<input type="reset" value="reset">
+		</form>
+		<script>
+		function addRow(){
+			var tableBody = document.getElementById("tableBody");
+			var newRow = tableBody.insertRow();
+			var cell1 = newRow.insertCell(0);
+			var cell2 = newRow.insertCell(1);
+			var cell3 = newRow.insertCell(2);
+			var cell4 = newRow.insertCell(3);
+			var cell5 = newRow.insertCell(4);
+			var cell6 = newRow.insertCell(5);
+			var cell7 = newRow.insertCell(6);
+			var cell8 = newRow.insertCell(7);
+			var cell9 = newRow.insertCell(8);
+			var cell10 = newRow.insertCell(9);
+			var cell11= newRow.insertCell(10);
+			var cell12= newRow.insertCell(11);
+			var cell13= newRow.insertCell(12);
+			var cell14= newRow.insertCell(13);
+			var cell15= newRow.insertCell(14);
+			//create select element (dropdown List)
+			var selectList = document.createElement("select");
+			selectList.name="projectCode";
+			//add options to the select element 
+			var option1 = document.createElement("option");
+			option1.text = "01";
+			selectList.appendChild(option1);
+			
+			var option2 = document.createElement("option");
+			option2.text = "02";
+			selectList.appendChild(option2);
+			
+			var option3 = document.createElement("option");
+			option3.text = "03";
+			selectList.appendChild(option3);
+			
+			var option4 = document.createElement("option");
+			option4.text = "04";
+			selectList.appendChild(option4);
+			
+			var option5 = document.createElement("option");
+			option5.text = "05";
+			selectList.appendChild(option5);
+			
+			var option6 = document.createElement("option");
+			option6.text = "06";
+			selectList.appendChild(option6);
+			//------------------------------------------------------------------------------------------
+			var selectList2 = document.createElement("select");
+			selectList2.name="taskCode";
+			//add options to the select element 
+			var option1 = document.createElement("option");
+			option1.text = "1";
+			selectList2.appendChild(option1);
+			
+			var option2 = document.createElement("option");
+			option2.text = "2";
+			selectList2.appendChild(option2);
+			
+			var option3 = document.createElement("option");
+			option3.text = "3";
+			selectList2.appendChild(option3);
+			
+			var option4 = document.createElement("option");
+			option4.text = "4";
+			selectList2.appendChild(option4);
+			
+			var option5 = document.createElement("option");
+			option5.text = "5";
+			selectList2.appendChild(option5);
+			
+			var option6 = document.createElement("option");
+			option6.text = "6";
+			selectList2.appendChild(option6);
+			
+			//-------------------------------------------------------------------------------------------
+			
+			var selectList3 = document.createElement("select");
+			selectList3.name="signOff";
+			var option1 = document.createElement("option");
+			option1.text = "YES";
+			selectList3.appendChild(option1);
+			
+			var option2 = document.createElement("option");
+			option2.text = "NO";
+			selectList3.appendChild(option2);
+			
+			//-------------------------------------------------------------------------------------------
+			
+			var selectList4 = document.createElement("select");
+			selectList4.name="invoice";
+			var option1 = document.createElement("option");
+			option1.text = "YES";
+			selectList4.appendChild(option1);
+			
+			var option2 = document.createElement("option");
+			option2.text = "NO";
+			selectList4.appendChild(option2);
+			
+			//append the select element to the cell
+			cell1.appendChild(selectList);
+			cell2.innerHTML = '<input type="number" name="srNo" />';
+			cell3.appendChild(selectList2);
+			cell4.innerHTML = '<input type="text" name="taskName" />';
+			cell5.innerHTML = '<input type="text" name="dependableTaskCode" />';
+			cell6.innerHTML = '<input type="text" name="simultaneousTasks" />';
+			cell7.innerHTML = '<input type="date" name="plannedtoStartDate" />';
+			cell8.innerHTML = '<input type="date" name="plannedtoEndDate" />';
+			cell9.innerHTML = '<input type="date" name="actualStartDate" />';
+			cell10.innerHTML = '<input type="date" name="actualEndDate" />';
+			cell11.appendChild(selectList3);
+			cell12.appendChild(selectList4);
+			cell13.innerHTML = '<input type="number" name="allocatedDays" />';
+			cell14.innerHTML = '<input type="number" name="actualDays" />';
+			cell15.innerHTML = '<textarea type="text" name="taskDescription" required></textarea>';	
+			
+		}
+	</script>
+</body>
+</html>
